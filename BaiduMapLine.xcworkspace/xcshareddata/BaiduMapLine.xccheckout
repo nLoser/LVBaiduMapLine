@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>F451E9EB-F5AF-485E-A379-1D445E19FBBA</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BaiduMapLine</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C577371B50A84BF8E193F8FC8C120D447D129277</key>
+		<string>https://github.com/nLoser/BaiduMapLine.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BaiduMapLine.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C577371B50A84BF8E193F8FC8C120D447D129277</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/nLoser/BaiduMapLine.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C577371B50A84BF8E193F8FC8C120D447D129277</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C577371B50A84BF8E193F8FC8C120D447D129277</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BaiduMapLine</string>
+		</dict>
+	</array>
+</dict>
+</plist>

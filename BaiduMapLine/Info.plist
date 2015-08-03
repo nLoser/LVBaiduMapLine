@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>LV.$(PRODUCT_NAME:rfc1034identifier)</string>
+	<string>百度实时路线</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -36,5 +36,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>百度路线</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>我要定位，别挡啊</string>
 </dict>
 </plist>
