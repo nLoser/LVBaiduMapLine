@@ -7,8 +7,9 @@
 //
 
 #import "AppDelegate.h"
-
+#import "AppDelegate+LVSet.h"
 #import <BaiduMapAPI/BMapKit.h>
+#import "LVViewController.h"
 
 NSString * const BaiduMapKey  = @"FKLGd0XldzKhMQh82j0RAOZG";
 
@@ -27,22 +28,30 @@ NSString * const BaiduMapKey  = @"FKLGd0XldzKhMQh82j0RAOZG";
     [_mapManager start:BaiduMapKey generalDelegate:self];
 
     NSString * oneStr = [[NSUserDefaults standardUserDefaults] valueForKey:@"ONE"];
-    if (!oneStr)
+    NSString * TwoStr = [[NSUserDefaults standardUserDefaults] valueForKey:@"TWO"];
+    if (!oneStr&&!TwoStr)
     {
         NSFileManager * manager = [[NSFileManager alloc] init];
         NSString * docStr = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
         NSString * dataStr = [docStr stringByAppendingString:@"/coreLocation.txt"];
-        NSLog(@"%@",dataStr);
+        NSString * dataStr2 = [docStr stringByAppendingString:@"/coreBluetooth.txt"];
+        
         BOOL res = [manager createFileAtPath:dataStr contents:nil attributes:nil];
-        if (res)
+        BOOL res2 = [manager createFileAtPath:dataStr2 contents:nil attributes:nil];
+        if (res&&res2)
         {
             [[NSUserDefaults standardUserDefaults] setValue:dataStr forKey:@"ONE"];
+            [[NSUserDefaults standardUserDefaults] setValue:dataStr2 forKey:@"TWO"];
         }else
         {
             NSLog(@"创建文件失败");
         }
     }
-
+    
+    [self initlizationSet];
+    
+    LVViewController * vc = [[LVViewController alloc] init];
+    self.window.rootViewController = vc;
     
     return YES;
 }

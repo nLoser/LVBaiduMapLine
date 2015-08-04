@@ -1,4 +1,4 @@
- //
+//
 //  ViewController.m
 //  BaiduMapLine
 //
@@ -6,7 +6,7 @@
 //  Copyright (c) 2015年 linkdow. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LVViewController.h"
 #import <BaiduMapAPI/BMKMapView.h>
 #import <BaiduMapAPI/BMKPolyline.h>
 #import <BaiduMapAPI/BMKPolylineView.h>
@@ -17,7 +17,7 @@
 #import "LVBlueCentral.h"
 #import "LVBluePeripheral.h"
 
-@interface ViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
+@interface LVViewController ()<BMKMapViewDelegate,BMKLocationServiceDelegate>
 {
     LVBlueCentral *_CentralManagr;
     LVBluePeripheral * _PerManager;
@@ -37,7 +37,7 @@
 
 @end
 
-@implementation ViewController
+@implementation LVViewController
 
 #pragma mark - BMKLocationServiceDelegate
 
@@ -60,7 +60,7 @@
         
         [_dataArray addObject:userLocation.location];
         dispatch_async(dispatch_get_main_queue(), ^{
-           [self initOverLine:_dataArray];
+            [self initOverLine:_dataArray];
         });
     });
 }
@@ -190,6 +190,17 @@
 {
     _PerManager = [LVBluePeripheral shareInstance];
     [_PerManager createAndNotify];
+    
+    @try {
+        _CentralManagr = [LVBlueCentral sharedInstance];
+        [_CentralManagr startCreateAndScan];
+    }
+    @catch (NSException *exception)
+    {
+        
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"%@",exception] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
 }
 
 /// 初始化地图
@@ -225,11 +236,12 @@
 #pragma mark - ♻️ Life Cycle
 - (void)viewDidLoad
 {
+    self.view.backgroundColor = [UIColor whiteColor];
     [super viewDidLoad];
     [self initBlueweb];
-//    [self initMapView];
-//    [self initLocation];
-//    [self initToolView];
+    [self initMapView];
+    [self initLocation];
+    [self initToolView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
